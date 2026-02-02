@@ -9,21 +9,21 @@ function Dashboard() {
   return (
     <>
       
-        <div className="bg-[#E5E5E5] md:w-[calc(100vw-17rem)] w-full h-screen overflow-x-hidden">
+        <div className="bg-[#E5E5E5] dark:bg-slate-900 md:w-[calc(100vw-17rem)] w-full h-screen overflow-x-hidden">
           <div className="flex justify-between items-center m-2 md:m-5 mt-0 pt-5 pr-2">
             <div>
-              <h1 className="text-2xl font-bold ">Dashboard</h1>
+              <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Dashboard</h1>
             </div>
             <div className="flex gap-2">
-              <div className="flex gap-1 items-center bg-white rounded p-2">
+              <div className="flex gap-1 items-center bg-white dark:bg-slate-800 dark:text-slate-200 rounded p-2">
                 10-06-21 <ChevronDown />
               </div>
-              <div className="flex gap-1 items-center bg-white rounded p-2">
+              <div className="flex gap-1 items-center bg-white dark:bg-slate-800 dark:text-slate-200 rounded p-2">
                 10-10-21 <ChevronDown />
               </div>
             </div>
           </div>
-            <div className="flex  gap-5 mx-2 md:mx-5 max-w-[100vw] md:min-w-full mt-5 overflow-x-auto mb-4">
+            <div className="flex md:justify-between md:pr-10 gap-5 mx-2 md:mx-5 max-w-[100vw] md:min-w-full mt-5 overflow-x-auto mb-4">
               <DashboardCard
                 title="Saved Products"
                 value="178+"

@@ -1,4 +1,5 @@
 import { User,Settings,Layout, LogOut } from "lucide-react"
+import { logoutUser } from "@/lib/auth";
 
 import {
   Sidebar,
@@ -10,7 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarFooter,
-   SidebarHeader
+  SidebarHeader
 } from "@/components/ui/sidebar"
 
 import { Button } from "@/components/ui/button"
@@ -21,17 +22,17 @@ import Image from "next/image"
 const items = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/dashboard",
     icon: Layout,
   },
   {
     title: "Users",
-    url: "#",
+    url: "/dashboard/users",
     icon: User,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/dashboard/settings",
     icon: Settings,
   }
 ]
@@ -42,7 +43,7 @@ export default function AppSidebar() {
       <SidebarHeader>
         <SidebarGroupLabel className="my-4">
           <Image src="/logo.png" alt="Logo" width={42} height={42} />
-          <h1 className="text-lg md:text-xl font-semibold text-black ml-2">
+          <h1 className="text-lg md:text-xl font-semibold text-black dark:text-slate-100 ml-2">
             Pulse Board
           </h1>
         </SidebarGroupLabel>
@@ -56,7 +57,7 @@ export default function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
                       <item.icon/>
-                      <span className="text-lg text-[#030229] font-medium">{item.title}</span>
+                      <span className="text-lg text-[#030229] dark:text-slate-200 font-medium">{item.title}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -66,7 +67,7 @@ export default function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-          <Button className="bg-purple hover:bg-purple/80 cursor-pointer">Logout <LogOut /></Button>
+          <Button className="bg-purple hover:bg-purple/80 cursor-pointer" onClick={logoutUser}>Logout <LogOut /></Button>
       </SidebarFooter>
     </Sidebar>
   )

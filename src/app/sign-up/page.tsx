@@ -48,10 +48,10 @@ function SignUp() {
   return (
      <>
      <div><Toaster/></div>
-    <div className="flex flex-col md:flex-row  md:h-screen h-auto items-start md:items-center  justify-between">
+    <div className="flex flex-col md:flex-row md:h-screen h-auto items-start md:items-center justify-between bg-white dark:bg-slate-900">
       <div className="flex flex-col w-full md:w-1/3 gap-7 px-5 py-10 h-auto md:px-12 md:py-24 md:h-screen md:self-start">
         <Image src="/logo.png" alt="Logo" width={70} height={70} />
-        <h1 className="text-2xl md:text-4xl font-semibold text-black">
+        <h1 className="text-2xl md:text-4xl font-semibold text-black dark:text-slate-100">
           Sign Up
         </h1>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
@@ -61,7 +61,7 @@ function SignUp() {
               type="text"
               id="name"
               placeholder="John Doe"
-              className="bg-[#F7F7F8]"
+              className="bg-[#F7F7F8] dark:bg-slate-800 dark:border-slate-600 dark:text-slate-100 dark:placeholder:text-slate-400"
               disabled={isLoading}
               {...register("name", { required: "Name is required" })}
             />
@@ -77,7 +77,7 @@ function SignUp() {
               type="email"
               id="email"
               placeholder="johndoe@gmail.com"
-              className="bg-[#F7F7F8]"
+              className="bg-[#F7F7F8] dark:bg-slate-800 dark:border-slate-600 dark:text-slate-100 dark:placeholder:text-slate-400"
               disabled={isLoading}
               {...register("email", {
                 required: "Email is required",
@@ -99,7 +99,7 @@ function SignUp() {
               type="password"
               id="password"
               placeholder="***********"
-              className="bg-[#F7F7F8]"
+              className="bg-[#F7F7F8] dark:bg-slate-800 dark:border-slate-600 dark:text-slate-100 dark:placeholder:text-slate-400"
               disabled={isLoading}
               {...register("password", {
                 required: "Password is required",
@@ -123,9 +123,9 @@ function SignUp() {
             {isLoading ? "Creating Account..." : "Create Account"}
           </Button>
         </form>
-        <p className="text-center">Already have an account? <Link href="/sign-in" className="text-purple font-semibold"> Login</Link></p>
+        <p className="text-center text-slate-700 dark:text-slate-300">Already have an account? <Link href="/sign-in" className="text-purple dark:text-purple-300 font-semibold"> Login</Link></p>
       </div>
-      <div className="md:ml-12 md:mt-0 mt-10 md:w-2/3">
+      <div className="md:ml-12 md:mt-0 mt-10 md:w-2/3 dark:opacity-90">
         <Image src="/Illustration.png" alt="Logo" width={700} height={427} />
       </div>
     </div>

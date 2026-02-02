@@ -54,12 +54,12 @@ const orders: Order[] = [
 
 function RecentOrders() {
   return (
-    <div className="w-full bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+    <div className="w-full bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
       <div className="flex justify-between items-center p-5 pb-4">
-        <h2 className="text-xl font-bold text-slate-800">Recent Orders</h2>
+        <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">Recent Orders</h2>
         <button
           type="button"
-          className="text-slate-400 hover:text-slate-600 transition-colors p-1"
+          className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors p-1"
           aria-label="More options"
         >
           <MoreHorizontal size={22} />
@@ -105,32 +105,32 @@ function RecentOrders() {
               return (
                 <tr
                   key={order.trackingNo}
-                  className="border-b border-slate-50 last:border-b-0"
+                  className="border-b border-slate-50 dark:border-slate-700 last:border-b-0"
                 >
-                  <td className="py-3.5 px-5 text-sm font-medium text-slate-800">
+                  <td className="py-3.5 px-5 text-sm font-medium text-slate-800 dark:text-slate-200">
                     {order.trackingNo}
                   </td>
                   <td className="py-3.5 px-5">
                     <div className="flex items-center gap-3">
                       <div
-                        className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${order.productBg}`}
+                        className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${order.productBg} dark:opacity-90`}
                       >
-                        <Icon size={20} className="text-slate-700" />
+                        <Icon size={20} className="text-slate-700 dark:text-slate-300" />
                       </div>
-                      <span className="text-sm font-medium text-slate-800">
+                      <span className="text-sm font-medium text-slate-800 dark:text-slate-200">
                         {order.productName}
                       </span>
                     </div>
                   </td>
-                  <td className="py-3.5 px-5 text-sm font-medium text-slate-800">
+                  <td className="py-3.5 px-5 text-sm font-medium text-slate-800 dark:text-slate-200">
                     {order.price}
                   </td>
                   <td className="py-3.5 px-5">
-                    <span className="inline-flex items-center justify-center min-w-[2.5rem] px-2.5 py-1 rounded-full text-sm font-semibold text-blue-600 bg-blue-50">
+                    <span className="inline-flex items-center justify-center min-w-[2.5rem] px-2.5 py-1 rounded-full text-sm font-semibold text-blue-600 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/40">
                       {order.totalOrder}
                     </span>
                   </td>
-                  <td className="py-3.5 px-5 text-sm font-medium text-slate-800">
+                  <td className="py-3.5 px-5 text-sm font-medium text-slate-800 dark:text-slate-200">
                     ${order.totalAmount}
                   </td>
                 </tr>

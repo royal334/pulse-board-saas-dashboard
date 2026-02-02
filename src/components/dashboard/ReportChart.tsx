@@ -45,10 +45,10 @@ const CustomTooltip = ({
 
 export function ReportChart() {
   return (
-    <div className="w-full h-[350px] p-6 bg-white rounded-xl">
+    <div className="w-full h-[350px] p-6 bg-white dark:bg-slate-800 rounded-xl border border-transparent dark:border-slate-700">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-bold text-slate-800">Reports</h2>
-        <button className="text-slate-400 hover:text-slate-600 transition-colors">
+        <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">Reports</h2>
+        <button className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
           <span className="text-2xl leading-none px-2 pb-2">...</span>
         </button>
       </div>
