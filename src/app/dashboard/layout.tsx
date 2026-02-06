@@ -1,14 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import {
+  SidebarProvider,
+  SidebarTrigger,
+  SidebarInset,
+} from "@/components/ui/sidebar";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import AppSidebar from "@/components/dashboard/AppSidebar";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
 
@@ -88,14 +96,20 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     );
   }
 
-  return <>
-
-     <SidebarProvider>
-     <AppSidebar />
-     <main>
-          <SidebarTrigger />
+  return (
+    <>
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <div className="top-4 left-4 z-50 md:hidden">
+            <SidebarTrigger />
+          </div>
+          <div className="hidden md:block absolute top-4 left-4 z-50">
+            <SidebarTrigger />
+          </div>
           {children}
-     </main>
-     </SidebarProvider>
-  </>;
+        </SidebarInset>
+      </SidebarProvider>
+    </>
+  );
 }

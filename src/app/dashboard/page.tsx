@@ -10,7 +10,7 @@ function Dashboard() {
     <>
       
         <div className="bg-[#E5E5E5] dark:bg-slate-900 md:w-[calc(100vw-17rem)] w-full h-screen overflow-x-hidden">
-          <div className="flex justify-between items-center m-2 md:m-5 mt-0 pt-5 pr-2">
+          <div className="flex justify-between items-center m-2 md:m-5 mt-0 pt-5 ">
             <div>
               <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Dashboard</h1>
             </div>
@@ -45,14 +45,14 @@ function Dashboard() {
                 icon="/icons/icon-4.png"
               />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mx-2 md:mx-5">
-              <div className="col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-7  mx-2 md:mx-5">
+              <div className="md:col-span-2">
                 <ReportChart />
               </div>
               <div>
                 <Analytics />
               </div>
-              <div className="mb-5 col-span-2">
+              <div className="mb-5 md:col-span-2">
                 <RecentOrders />
               </div>
               <div className="mb-5">
