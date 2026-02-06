@@ -316,7 +316,7 @@ export default function UsersPage() {
                           {user.email}
                         </td>
                         <td className="py-3.5 px-5">
-                          <span className="inline-flex items-center justify-center min-w-[4rem] px-2.5 py-1 rounded-full text-xs font-medium capitalize bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200">
+                          <span className="inline-flex items-center justify-center min-w-16 px-2.5 py-1 rounded-full text-xs font-medium capitalize bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200">
                             {user.role}
                           </span>
                         </td>
