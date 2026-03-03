@@ -1,4 +1,4 @@
-import { User,Settings,Layout, LogOut } from "lucide-react"
+import { User, Settings, Layout, LogOut } from "lucide-react";
 import { logoutUser } from "@/lib/auth";
 
 import {
@@ -11,12 +11,11 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarFooter,
-  SidebarHeader
-} from "@/components/ui/sidebar"
+  SidebarHeader,
+} from "@/components/ui/sidebar";
 
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 // Menu items.
 const items = [
@@ -34,8 +33,8 @@ const items = [
     title: "Settings",
     url: "/dashboard/settings",
     icon: Settings,
-  }
-]
+  },
+];
 
 export default function AppSidebar() {
   return (
@@ -56,8 +55,10 @@ export default function AppSidebar() {
                 <SidebarMenuItem key={item.title} className="my-4">
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
-                      <item.icon/>
-                      <span className="text-lg text-[#030229] dark:text-slate-200 font-medium">{item.title}</span>
+                      <item.icon />
+                      <span className="text-lg text-[#030229] dark:text-slate-200 font-medium">
+                        {item.title}
+                      </span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -66,9 +67,14 @@ export default function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>
-          <Button className="bg-purple hover:bg-purple/80 cursor-pointer" onClick={logoutUser}>Logout <LogOut /></Button>
+      <SidebarFooter className="bg-white dark:bg-zinc-950">
+        <Button
+          className="bg-purple hover:bg-purple/80 cursor-pointer"
+          onClick={logoutUser}
+        >
+          Logout <LogOut />
+        </Button>
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

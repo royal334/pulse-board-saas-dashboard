@@ -1,11 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  SidebarProvider,
-  SidebarTrigger,
-  SidebarInset,
-} from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/sidebar";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
@@ -67,6 +63,7 @@ export default function DashboardLayout({
                 <Skeleton className="h-10 w-28 rounded-md" />
               </div>
             </div>
+            </div>
 
             {/* Users/Settings-style cards */}
             <div className="mt-6 space-y-4">
@@ -90,26 +87,22 @@ export default function DashboardLayout({
                 </div>
               </div>
             </div>
-          </div>
         </main>
       </div>
     );
   }
 
   return (
-    <>
-      <SidebarProvider>
+    <SidebarProvider>
+      <div className="flex min-h-screen w-full bg-[#E5E5E5] dark:bg-slate-900">
         <AppSidebar />
-        <SidebarInset>
-          <div className="top-4 left-4 z-50 md:hidden">
-            <SidebarTrigger />
-          </div>
-          <div className="hidden md:block absolute top-4 left-4 z-50">
-            <SidebarTrigger />
-          </div>
-          {children}
+        <SidebarInset className="flex-1 overflow-x-hidden">
+          <header className="sticky top-0 z-10 flex h-16 items-center gap-2 border-b border-slate-200 bg-[#E5E5E5]/80 px-4 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80">
+            <SidebarTrigger className="-ml-1" />
+          </header>
+          <main className="w-full">{children}</main>
         </SidebarInset>
-      </SidebarProvider>
-    </>
+      </div>
+    </SidebarProvider>
   );
 }

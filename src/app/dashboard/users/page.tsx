@@ -167,7 +167,7 @@ export default function UsersPage() {
   return (
     <>
       <Toaster />
-      <div className="bg-[#E5E5E5] dark:bg-slate-900 md:w-[calc(100vw-17rem)] w-full min-h-screen overflow-x-hidden">
+      <div className="w-full overflow-x-hidden">
         <div className="flex flex-row justify-between items-start sm:items-center gap-4 m-2 md:m-5 mt-0 pt-5 pr-2">
           <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
             Users

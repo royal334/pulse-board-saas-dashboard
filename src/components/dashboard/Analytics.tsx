@@ -12,7 +12,7 @@ const data = [
 
 const Analytics = () => {
   return (
-    <div className="w-full h-full bg-white dark:bg-card rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+    <div className="w-full h-full bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-color-black dark:text-white">
           Analytics
